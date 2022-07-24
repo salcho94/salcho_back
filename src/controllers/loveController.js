@@ -29,17 +29,18 @@ exports.readLove = async function(req,res){
 
 //수정 요청 !!
 exports.updateLove = async function (req, res) {
+  console.log("업데이트 요청은 들어옴 ")
   const { coment , hidden } = req.body;
   console.log(coment,hidden);
 
-  if (coment && typeof studentName !== "string") {
+  if (coment && typeof coment !== "string") {
     return res.send({
       isSuccess: false,
       code: 400, // 요청 실패시 400번대 코드
       message: "값을 정확히 입력해주세요.",
     });
   }
-  if (hidden && typeof major !== "string") {
+  if (hidden && typeof hidden !== "string") {
     return res.send({
       isSuccess: false,
       code: 400, // 요청 실패시 400번대 코드
@@ -48,9 +49,8 @@ exports.updateLove = async function (req, res) {
   }
 
   try {
-    //const connection = await pool.getConnection(async (conn) => conn);
+    const connection = await pool.getConnection(async (conn) => conn);
     try {
-      
       const [rows] = await loveDao.updateLove(
         connection,
         coment,
