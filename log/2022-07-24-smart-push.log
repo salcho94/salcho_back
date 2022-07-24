@@ -1,3 +1,15 @@
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 12:15:40"}
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 12:36:53"}
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 12:56:50"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 13:03:33"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 14:22:06"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 14:23:03"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 14:27:42"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 14:29:07"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 14:34:29"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 15:01:57"}
+{"level":"error","message":"updateLove Query error\n: {\"message\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, title)' at line 1\",\"code\":\"ER_PARSE_ERROR\",\"errno\":1064,\"sql\":\"update LOVE set coment = ifnull('사랑하오 ', coment), hidden = ifnull('매일매일', hidden), title = ifnull(?, title)\",\"sqlState\":\"42000\",\"sqlMessage\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, title)' at line 1\"}","timestamp":"2022-07-24 15:02:24"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 15:03:19"}
+{"level":"error","message":"updateLove Query error\n: {\"message\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, hidden)' at line 1\",\"code\":\"ER_PARSE_ERROR\",\"errno\":1064,\"sql\":\"update LOVE set title = ifnull('만힝 사랑해 ', title),coment = ifnull('여보야', coment), hidden = ifnull(?, hidden)\",\"sqlState\":\"42000\",\"sqlMessage\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, hidden)' at line 1\"}","timestamp":"2022-07-24 15:03:46"}
+{"level":"error","message":"updateLove Query error\n: {\"message\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, hidden)' at line 1\",\"code\":\"ER_PARSE_ERROR\",\"errno\":1064,\"sql\":\"update LOVE set title = ifnull('만힝 사랑해 ', title),coment = ifnull('여보야', coment), hidden = ifnull(?, hidden)\",\"sqlState\":\"42000\",\"sqlMessage\":\"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?, hidden)' at line 1\"}","timestamp":"2022-07-24 15:03:47"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-07-24 15:06:29"}

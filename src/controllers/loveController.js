@@ -4,16 +4,34 @@ const { logger } = require("../../config/winston");
 const secret = require("../../config/secret");
 const loveDao = require("../dao/loveDao");
 
-//get 요청 !!
+//post 요청 !!
 exports.readLove = async function(req,res){
     try{
+    const { pass } = req.body;
+      if (!pass) {
+        return res.send({
+         isSuccess: false,
+         code: 400, // 요청 실패시 400번대 코드
+         message: "비밀번호 값이 존재하지 않습니다.",
+        });
+    }
+      console.log(pass);
     const connection = await pool.getConnection(async(conn) => conn);
     try{
-      const [rows] = await loveDao.selectMessage(connection);
-      let message = rows[0].coment; 
+      const [rows] = await loveDao.selectData(connection,pass);
+      console.log(rows);
+      if(rows.length === 0){
+        return res.send({
+          isSuccess: false,
+          code: 400, // 요청 실패시 400번대 코드
+          message: "비밀번호가 다릅니다.",
+        });
+      }
       return res.send({
-        지섭님이메세지를보냈습니다 : message,
-        
+        result: rows,
+        isSuccess: true,
+        code: 200,
+        message: "요청 성공",
       });
     }catch (err) {
       logger.error(`LOVE Query error\n: ${JSON.stringify(err)}`);
@@ -29,10 +47,14 @@ exports.readLove = async function(req,res){
 
 //수정 요청 !!
 exports.updateLove = async function (req, res) {
-  console.log("업데이트 요청은 들어옴 ")
-  const { coment , hidden } = req.body;
-  console.log(coment,hidden);
-
+  const { title , coment , hidden } = req.body;
+  if (title && typeof title !== "string") {
+    return res.send({
+      isSuccess: false,
+      code: 400, // 요청 실패시 400번대 코드
+      message: "값을 정확히 입력해주세요.",
+    });
+  }
   if (coment && typeof coment !== "string") {
     return res.send({
       isSuccess: false,
@@ -53,6 +75,7 @@ exports.updateLove = async function (req, res) {
     try {
       const [rows] = await loveDao.updateLove(
         connection,
+        title,
         coment,
         hidden
       );
@@ -62,13 +85,13 @@ exports.updateLove = async function (req, res) {
         message: "수정 성공",
       });
     } catch (err) {
-      logger.error(`updateStudent Query error\n: ${JSON.stringify(err)}`);
+      logger.error(`updateLove Query error\n: ${JSON.stringify(err)}`);
       return false;
     } finally {
       connection.release();
     }
   } catch (err) {
-    logger.error(`updateStudent DB Connection error\n: ${JSON.stringify(err)}`);
+    logger.error(`updateLove DB Connection error\n: ${JSON.stringify(err)}`);
     return false;
   }
 };
