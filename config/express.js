@@ -24,8 +24,8 @@ module.exports = function () {
 
     const options = {
       ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
-      key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
-      cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
+      key: fs.readFileSync( '/etc/letsencrypt/live/salcho.cf/privkey.pem'),
+      cert: fs.readFileSync( '/etc/letsencrypt/live/salcho.cf/cert.pem'),
     };
     // Create an HTTPS service identical to the HTTP service.
     https.createServer(options, app).listen(3000);
