@@ -1,39 +1,23 @@
 const express = require("express");
 const compression = require("compression");
 const methodOverride = require("method-override");
-let cors = require("cors");
-
-const https = require('https');
-const http = require('http');
-const fs = require('fs');
+var cors = require("cors");
 
 module.exports = function () {
-    const app = express();
+  const app = express();
 
-    /* 미들웨어 설정 */
-    app.use(compression()); // HTTP 요청을 압축 및 해제
-    app.use(express.json()); // body값을 파싱
-    app.use(express.urlencoded({extended: true})); // form 으로 제출되는 값 파싱
-    app.use(methodOverride()); // put, delete 요청 처리
-    app.use(cors()); // 웹브라우저 cors 설정을 관리
-    app.use(express.static("/home/ubuntu/food-map-dist-example/front")); // express 정적 파일 제공 (html, css, js 등..)
-    // app.use(express.static(process.cwd() + '/public'));
 
-    /* 직접 구현해야 하는 모듈 */
-    require("../src/routes/loveRoute")(app);
+  /* 미들웨어 설정 */
+  app.use(compression()); // HTTP 요청을 압축 및 해제
+  app.use(express.json()); // body값을 파싱
+  app.use(express.urlencoded({ extended: true })); // form 으로 제출되는 값 파싱
+  app.use(methodOverride()); // put, delete 요청 처리
+  app.use(cors()); // 웹브라우저 cors 설정을 관리
+  app.use(express.static("/var/www/html/salcho_front")); // express 정적 파일 제공 (html, css, js 등..)
+  // app.use(express.static(process.cwd() + '/public'));
 
-    const options = {
-      ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
-      key: fs.readFileSync( '/etc/letsencrypt/live/salcho.cf/privkey.pem'),
-      cert: fs.readFileSync( '/etc/letsencrypt/live/salcho.cf/cert.pem'),
-    };
-    // Create an HTTPS service identical to the HTTP service.
-    https.createServer(options, app).listen(3000);
+  /* 직접 구현해야 하는 모듈 */
+  require("../src/routes/loveRoute")(app);
 
+  return app;
 };
-
-
-
-
-
-
