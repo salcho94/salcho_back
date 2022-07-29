@@ -2,12 +2,12 @@
   "name": "api-server-node",
   "version": "1.0.0",
   "description": "Node.js API Server",
-  "main": "index.js",
+  "main": "index_server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV=development node index.js",
-    "prod": "NODE_ENV=production node index.js",
-    "start": "nodemon index.js"
+    "dev": "NODE_ENV=development node index_server.js",
+    "prod": "NODE_ENV=production node index_server.js",
+    "start": "nodemon index_server.js"
   },
   "author": "",
   "license": "ISC",
