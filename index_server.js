@@ -3,20 +3,21 @@ const { logger } = require("./config/winston"); // log
 const fs = require('fs');
 const path = require('path');
 const HTTP = require('http');
-const HTTPS = require('https');
+const https = require('https');
+const PORT = process.env.PORT || 443;
+
 
 const app = express();
-HTTP.createServer(app).listen(3000);
+const server = https.createServer(app);
 try {
-    const option = {
+    const options = {
         ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
         key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
         cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
     };
 
-    HTTPS.createServer(option, app).listen(3030, () => {
-        logger.info(`API Server Start At Port `);
-    });
+    https.createServer(options, app).listen(PORT);
+
     } catch (error) {
         console.error('[HTTPS] HTTPS 오류가 발생하였습니다. HTTPS 서버는 실행되지 않습니다.');
         console.log(error);
