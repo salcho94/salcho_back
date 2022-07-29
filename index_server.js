@@ -21,5 +21,4 @@ try {
         console.log(error);
 }
 
-express().listen(port);
 logger.info(`API Server Start At Port ${port}`);
