@@ -14,11 +14,11 @@ try {
     };
 
     HTTPS.createServer(option, app).listen(port, () => {
-        console.log(`[HTTPS] Soda Server is started on port ${console.log(port)}`);
+        logger.info(`API Server Start At Port ${port}`);
     });
     } catch (error) {
         console.error('[HTTPS] HTTPS 오류가 발생하였습니다. HTTPS 서버는 실행되지 않습니다.');
         console.log(error);
 }
 
-logger.info(`API Server Start At Port ${port}`);
+
