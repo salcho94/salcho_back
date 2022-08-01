@@ -2,9 +2,10 @@ const express = require("./config/express");
 const { logger } = require("./config/winston"); // log
 const fs = require('fs');
 const path = require('path');
-const HTTPS = require('https');
+const http = require("http")
+const https = require('https');
 
-const app = express();
+
 const port = 3000;
 try {
     const option = {
@@ -12,8 +13,9 @@ try {
         key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
         cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
     };
-
-    HTTPS.createServer(option, app).listen(port, () => {
+    const app = express();
+    http.createServer(app).listen(80)
+    https.createServer(option, app).listen(443, () => {
         console.log(`[HTTPS] Soda Server is started on port ${console.log(port)}`);
     });
 } catch (error) {
