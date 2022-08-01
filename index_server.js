@@ -12,7 +12,7 @@ try {
         cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
     };
 
-    HTTPS.createServer(option, app).listen( () => {
+    HTTPS.createServer(option, app).listen( 443,() => {
         console.log(`[HTTPS] Soda Server is started on port ${console.log()}`);
     });
 } catch (error) {
