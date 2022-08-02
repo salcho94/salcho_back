@@ -1,0 +1,32 @@
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 16:01:13"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:32:58"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:35:00"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:35:59"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:38:39"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Table 'project.Users' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"insert into Users(userId, password, nickname) values ('test123','rlawltjq19','admin');\",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.Users' doesn't exist\"}","timestamp":"2022-08-02 17:38:59"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Table 'project.Users' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"insert into Users(userId, password, nickname) values ('test123','rlawltjq19','admin');\",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.Users' doesn't exist\"}","timestamp":"2022-08-02 17:39:11"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:40:09"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Unknown column 'userId' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"insert into MEMBER(userId, password, nickname) values ('test123','rlawltjq19','salcho');\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userId' in 'field list'\"}","timestamp":"2022-08-02 17:40:27"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Unknown column 'userId' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"insert into MEMBER(userId, password, nickname) values ('test123','rlawltjq19','salcho');\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userId' in 'field list'\"}","timestamp":"2022-08-02 17:41:38"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Unknown column 'userId' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"insert into MEMBER(userId, password, nickname) values ('test123','rlawltjq19','salcho');\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userId' in 'field list'\"}","timestamp":"2022-08-02 17:42:08"}
+{"level":"error","message":"createUsers Query error\n: {\"message\":\"Unknown column 'userId' in 'field list'\",\"code\":\"ER_BAD_FIELD_ERROR\",\"errno\":1054,\"sql\":\"insert into MEMBER(userId, password, nickname) values ('test123','rlawltjq19','salcho');\",\"sqlState\":\"42S22\",\"sqlMessage\":\"Unknown column 'userId' in 'field list'\"}","timestamp":"2022-08-02 17:42:10"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:42:13"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 17:57:23"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:04:53"}
+{"level":"error","message":"createUsers Query error\n: {}","timestamp":"2022-08-02 18:05:28"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:07:06"}
+{"level":"error","message":"createUsers Query error\n: {}","timestamp":"2022-08-02 18:07:10"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:07:32"}
+{"level":"error","message":"createUsers Query error\n: {}","timestamp":"2022-08-02 18:07:36"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:08:10"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:09:23"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:13:37"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:14:31"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:15:10"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:17:18"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:17:40"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:18:25"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:18:42"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:19:00"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:19:39"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-02 18:20:41"}

@@ -17,6 +17,8 @@ module.exports = function () {
 
   /* 직접 구현해야 하는 모듈 */
   require("../src/routes/loveRoute")(app);
+  require("../src/routes/boardRoute")(app);
+  require("../src/routes/memberRoute")(app);
 
   return app;
 };
