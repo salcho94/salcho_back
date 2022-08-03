@@ -72,7 +72,7 @@ exports.createUsers = async function (req, res) {
         result: { jwt: token },
         isSuccess: true,
         code: 200, // 요청 실패시 400번대 코드
-        message: "회원가입을 성공하였습니다.",
+        message: "동료가 된걸 환영합니다!",
       });
     } catch (err) {
       logger.error(`createUsers Query error\n: ${JSON.stringify(err)}`);
