@@ -13,9 +13,7 @@ try {
         cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
     };
 
-    HTTPS.createServer(option, app).listen(port, () => {
-        console.log(`[HTTPS] Soda Server is started on port ${console.log(port)}`);
-    });
+    HTTPS.createServer(option, app).listen(port,'0.0.0.0')
 } catch (error) {
     console.error('[HTTPS] HTTPS 오류가 발생하였습니다. HTTPS 서버는 실행되지 않습니다.');
     console.log(error);

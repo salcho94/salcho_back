@@ -19,6 +19,7 @@ module.exports = function () {
   require("../src/routes/loveRoute")(app);
   require("../src/routes/boardRoute")(app);
   require("../src/routes/memberRoute")(app);
+  require("../src/routes/mainRoute")(app);
 
   return app;
 };
