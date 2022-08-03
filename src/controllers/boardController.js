@@ -10,7 +10,6 @@ exports.list = async function(req,res){
     const connection = await pool.getConnection(async(conn) => conn);
     try{
       const [rows] = await boardDao.getList(connection);
-      console.log(rows);
       if(rows.length === 0){
         return res.send({
           isSuccess: false,
