@@ -10,7 +10,7 @@ exports.getVisit = async function (connection, ip) {
 };
 
 exports.insertVisit = async function (connection, ip) {
-  const Query = `insert into VISIT(ip, visit_date,visit_count,visit_time) values (?,DATE_FORMAT(now(),'%Y-%m-%d'),1,DATE_FORMAT(NOW(),'%Y-%m-%d:%H:%i:%S'))`;
+  const Query = `insert into VISIT(ip, visit_date,visit_count,visit_time) values (?,DATE_FORMAT(now(),'%Y-%m-%d'),1,DATE_FORMAT(NOW(),'%Y-%m-%d-%H:%i:%S'))`;
   const Params = [ip];
 
   const rows = await connection.query(Query, Params);
