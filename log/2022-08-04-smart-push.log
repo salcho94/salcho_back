@@ -61,3 +61,16 @@
 {"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:33"}
 {"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:34"}
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:58:45"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 11:14:23"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 13:24:20"}
+{"level":"error","message":"Board Query error\n: {\"message\":\"Table 'project.test' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"SELECT * FROM test \",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.test' doesn't exist\"}","timestamp":"2022-08-04 13:24:23"}
+{"level":"error","message":"Board Query error\n: {\"message\":\"Table 'project.test' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"SELECT * FROM test \",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.test' doesn't exist\"}","timestamp":"2022-08-04 13:26:22"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 13:37:43"}
+{"level":"error","message":"Board Query error\n: {\"message\":\"Table 'project.test' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"SELECT * FROM test \",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.test' doesn't exist\"}","timestamp":"2022-08-04 13:38:02"}
+{"level":"error","message":"Board Query error\n: {\"message\":\"Table 'project.test' doesn't exist\",\"code\":\"ER_NO_SUCH_TABLE\",\"errno\":1146,\"sql\":\"SELECT * FROM test \",\"sqlState\":\"42S02\",\"sqlMessage\":\"Table 'project.test' doesn't exist\"}","timestamp":"2022-08-04 13:38:47"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 13:40:11"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 15:13:00"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 15:13:40"}
+{"level":"error","message":"boardSave Query error\n: {}","timestamp":"2022-08-04 15:13:51"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 15:14:18"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 15:29:41"}

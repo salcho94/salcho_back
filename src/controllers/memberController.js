@@ -142,11 +142,11 @@ exports.create = async function (req, res) {
         });
       }
 
-     const { user_idx, nickname } = rows[0];
+     const { user_idx, nickname ,user_id} = rows[0];
 
       // 3. JWT 발급
       const token = jwt.sign(
-          { userIdx: user_idx, nickname: nickname }, // payload 정의
+          { userIdx: user_idx, nickname: nickname ,userId: user_id }, // payload 정의
           secret.jwtsecret // 서버 비밀키
       );
 
@@ -170,9 +170,9 @@ exports.create = async function (req, res) {
 
 // 로그인 유지, 토큰 검증
 exports.readJwt = async function (req, res) {
-  const { userIdx, nickname } = req.verifiedToken;
+  const { userIdx, nickname ,userId} = req.verifiedToken;
   return res.send({
-    result: { userIdx: userIdx, nickname: nickname },
+    result: { userIdx: userIdx, nickname: nickname ,userId: userId},
     code: 200, // 요청 실패시 400번대 코드
     message: "유효한 토큰입니다.",
   });

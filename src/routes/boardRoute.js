@@ -3,4 +3,5 @@ module.exports = function (app) {
  
   app.get("/board/list", board.list);
 
+  app.post("/board/insert",board.save);
 };

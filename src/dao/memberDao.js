@@ -3,7 +3,7 @@ const { pool } = require("../../config/database");
 
 // 회원가입
 exports.insertUsers = async function (connection, userId, password, nickname,salt) {
-  const Query = `insert into MEMBER(user_id, password, nickname,salt,reg_date) values (?,?,?,?,now());`;
+  const Query = `insert into MEMBER(user_id, password, nickname,salt,reg_date) values (?,?,?,?,now())`;
   const Params = [userId, password, nickname,salt];
 
   const rows = await connection.query(Query, Params);
@@ -22,7 +22,7 @@ exports.duplicationId = async function(connection,userId){
 
 // 로그인 (회원검증)
 exports.isValidUsers = async function (connection, userId, afterPassword) {
-  const Query = `SELECT user_idx, nickname FROM MEMBER where user_id = ? and password = ? and status = 'Y';`;
+  const Query = `SELECT user_idx, nickname ,user_id FROM MEMBER where user_id = ? and password = ? and status = 'Y';`;
   const Params = [userId, afterPassword];
 
   const rows = await connection.query(Query, Params);
