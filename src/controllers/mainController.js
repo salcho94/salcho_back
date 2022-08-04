@@ -32,7 +32,7 @@ exports.visit = async function(req,res){
           message: "요청 성공",
         });
       } catch (err) {
-        logger.error(`LOVE Query error\n: ${JSON.stringify(err)}`);
+        logger.error(`VISIT Query error\n: ${JSON.stringify(err)}`);
         return false;
       } finally {
         connection.release();
@@ -41,7 +41,7 @@ exports.visit = async function(req,res){
   catch
     (err)
     {
-      logger.error(`LOVE DB Connection error\n: ${JSON.stringify(err)}`);
+      logger.error(`VISIT DB Connection error\n: ${JSON.stringify(err)}`);
       return false;
     }
 }
