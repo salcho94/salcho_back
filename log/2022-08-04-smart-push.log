@@ -11,3 +11,53 @@
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 09:19:20"}
 {"level":"error","message":"VISIT Query error\n: {\"message\":\"Incorrect datetime value: '09:19:25' for column 'visit_time' at row 1\",\"code\":\"ER_TRUNCATED_WRONG_VALUE\",\"errno\":1292,\"sql\":\"insert into VISIT(ip, visit_date,visit_count,visit_time) values ('127.0.0.1',DATE_FORMAT(now(),'%Y-%m-%d'),1,DATE_FORMAT(NOW(),'%H:%i:%S'))\",\"sqlState\":\"22007\",\"sqlMessage\":\"Incorrect datetime value: '09:19:25' for column 'visit_time' at row 1\"}","timestamp":"2022-08-04 09:19:23"}
 {"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 09:20:13"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:00:58"}
+{"level":"error","message":"createUsers DB Connection error\n: {}","timestamp":"2022-08-04 10:02:01"}
+{"level":"error","message":"createUsers DB Connection error\n: {}","timestamp":"2022-08-04 10:02:08"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:02:42"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:07:59"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:08:24"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:10:04"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:12:25"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:18:16"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:20:14"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:21:17"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:22:43"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:25:34"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:36:56"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:37:35"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:38:20"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:38:51"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:40:07"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:40:43"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:40:57"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:41:29"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:42:07"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:42:40"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:47:36"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:48:19"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:48:36"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:49:06"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:49:35"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:51:23"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:52:37"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:52:41"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:53:12"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:53:17"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:54:34"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:54:40"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:55:02"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:55:05"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:55:21"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:55:24"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:56:23"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:56:26"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:56:53"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:57:06"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:24"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:26"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:31"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:32"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:33"}
+{"level":"error","message":"createJwt Query error\n: {}","timestamp":"2022-08-04 10:57:34"}
+{"level":"info","message":"API Server Start At Port 3000","timestamp":"2022-08-04 10:58:45"}
