@@ -55,10 +55,22 @@ exports.save = async  function(req,res){
 }
 
 exports.list = async function(req,res){
+    const {page} = req.query;
+    let pageNum;
+    if(page){
+        console.log(page)
+        console.log(Number(page) * 10)
+        pageNum = (page * 10 ) - 10 ;
+        console.log(pageNum)
+    }else{
+        pageNum = 0;
+    }
     try{
         const connection = await pool.getConnection(async(conn) => conn);
         try{
-          const [rows] = await boardDao.getList(connection);
+          const [rows] = await boardDao.getList(connection,pageNum);
+          const total = await boardDao.getTotal(connection);
+
           if(rows.length === 0){
             return res.send({
               isSuccess: false,
@@ -67,7 +79,7 @@ exports.list = async function(req,res){
             });
           }
           return res.send({
-            result: rows,
+            result: rows , total,
             isSuccess: true,
             code: 200,
             message: "요청 성공",

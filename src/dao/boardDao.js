@@ -1,8 +1,19 @@
 const { pool } = require("../../config/database");
 
 
-exports.getList = async function (connection,pass) {
-  const Query = `SELECT board_idx as boardIdx , writer , title, content , insert_dt as insertDt, secret_yn as secret,  board_count as count FROM BOARD WHERE del_yn = 'N'`;
+exports.getList = async function (connection,pageNum) {
+  const Query = `SELECT board_idx as boardIdx , writer , title, content , insert_dt as insertDt, secret_yn as secret,  board_count as count
+                 FROM BOARD
+                 WHERE del_yn = 'N'
+                 ORDER BY board_idx DESC
+                   LIMIT ?, 10;`;
+  const Params = [pageNum];
+  const rows = await connection.query(Query,Params);
+  return rows;
+};
+
+exports.getTotal = async function (connection) {
+  const Query = `SELECT count(*) as total FROM BOARD  WHERE del_yn ='N';`;
   const rows = await connection.query(Query);
   return rows;
 };
