@@ -1,6 +1,6 @@
 const { pool } = require("../../config/database");
 
-
+// 게시글 목록 불러오기
 exports.getList = async function (connection,pageNum) {
   const Query = `SELECT board_idx as boardIdx , writer , title, content , insert_dt as insertDt, secret_yn as secret,  board_count as count
                  FROM BOARD
@@ -12,6 +12,7 @@ exports.getList = async function (connection,pageNum) {
   return rows;
 };
 
+// 전체 글 갯수
 exports.getTotal = async function (connection) {
   const Query = `SELECT count(*) as total FROM BOARD  WHERE del_yn ='N';`;
   const rows = await connection.query(Query);
@@ -29,6 +30,8 @@ exports.insertBoards = async function ( connection, title, writer, content , pas
   return rows;
 };
 
+
+//비밀글 여부 확인
 exports.secretCheck = async function ( connection, boardId) {
   const Query = `SELECT * FROM BOARD WHERE del_yn = 'N' and board_idx = ?`;
   const Params = [boardId];
@@ -39,6 +42,7 @@ exports.secretCheck = async function ( connection, boardId) {
 };
 
 
+// 비밀글 불러오기
 exports.passCheck = async function ( connection, boardId, pass) {
   const Query = `SELECT * FROM BOARD WHERE del_yn = 'N' and board_idx = ? and pass = ?`;
   const Params = [boardId, pass];
@@ -47,3 +51,14 @@ exports.passCheck = async function ( connection, boardId, pass) {
 
   return rows;
 };
+
+
+// 조회수 증가
+exports.updateCount = async function ( connection, boardId){
+  const Query = `UPDATE BOARD SET board_count = board_count + 1 WHERE board_idx = ?`;
+  const Param = [boardId];
+
+  const row = await connection.query(Query,Param);
+
+  return row;
+}

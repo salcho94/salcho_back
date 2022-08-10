@@ -1,6 +1,5 @@
 const { pool } = require("../../config/database");
 const { logger } = require("../../config/winston");
-
 const secret = require("../../config/secret");
 const boardDao = require("../dao/boardDao");
 
@@ -98,7 +97,13 @@ exports.list = async function(req,res){
 
 
 exports.view = async function(req,res){
-    const { boardIdx ,secret ,pass} = req.query;
+    const { boardIdx ,secret ,pass, boardCount} = req.query;
+
+    // ip를 가져오는 함수
+    function getUserIP(req) {
+        const addr = req.headers['x-forwarded-for'] || req.connection.remoteAddress
+        return addr
+    }
     if(!boardIdx ){
         return res.send({
             isSuccess: false,
@@ -109,8 +114,10 @@ exports.view = async function(req,res){
 
     try{
         const connection = await pool.getConnection(async(conn) => conn);
-
         try{
+            if(boardCount == 'Y'){
+                await boardDao.updateCount(connection, boardIdx);
+            }
             if(secret == 'Y'){
                 const row = await boardDao.passCheck(connection, boardIdx ,pass);
                 if(row.length === 0){
