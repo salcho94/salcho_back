@@ -108,7 +108,6 @@ exports.createUsers = async function (req, res) {
 // 로그인
 exports.create = async function (req, res) {
   const { userId, password } = req.body;
-
   if (!userId || !password) {
     return res.send({
       isSuccess: false,
@@ -124,10 +123,18 @@ exports.create = async function (req, res) {
           new Promise(async (resolve, reject) => {
             // salt를 가져오는 부분은 각자의 DB에 따라 수정
             const [salt] = await memberDao.findSalt(connection,userId);
-            crypto.pbkdf2(password, salt[0].salt, 9999, 64, 'sha512', (err, key) => {
-              if (err) reject(err);
-              resolve(key.toString('base64'));
-            });
+            if(salt.length !== 0){
+              crypto.pbkdf2(password, salt[0].salt, 9999, 64, 'sha512', (err, key) => {
+                if (err) reject(err);
+                resolve(key.toString('base64'));
+              });
+            }else{
+              return res.send({
+                isSuccess: false,
+                code: 410, // 요청 실패시 400번대 코드
+                message: "회원정보가 존재하지 않습니다.",
+              });
+            }
           });
       const  afterPassword  = await makePasswordHashed(userId,password);
 
