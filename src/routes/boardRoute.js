@@ -9,4 +9,7 @@ module.exports = function (app) {
   app.get("/board/view", board.view);
   //게시글 등록
   app.post("/board/insert",board.save);
+
+  //관리자 게시글 목록
+  app.get("/admin/board/list", board.adminList);
 };

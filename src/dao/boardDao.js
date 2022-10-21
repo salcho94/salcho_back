@@ -12,6 +12,17 @@ exports.getList = async function (connection,pageNum) {
   return rows;
 };
 
+//관리자 게시글 목록 불러오기
+exports.getAdminList = async function (connection) {
+  const Query = `SELECT board_idx as boardIdx , writer , title, content , insert_dt as insertDt, secret_yn as secret,  board_count as count
+                 FROM BOARD
+                 WHERE del_yn = 'N'
+                 ORDER BY board_idx DESC`;
+      
+  const rows = await connection.query(Query);
+  return rows;
+};
+
 // 전체 글 갯수
 exports.getTotal = async function (connection) {
   const Query = `SELECT count(*) as total FROM BOARD  WHERE del_yn ='N';`;
