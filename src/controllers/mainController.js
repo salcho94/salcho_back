@@ -25,7 +25,7 @@ exports.visit = async function(req,res){
           resIp.push(ip);
           await mainDao.insertVisit(connection, ip)
         }
-
+        console.log('resIp',resIp);
         const [today] = await mainDao.today(connection);
         const [total] = await mainDao.total(connection);
 
