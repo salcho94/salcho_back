@@ -19,16 +19,18 @@ exports.visit = async function(req,res){
     }
       try {
         const [row] = await mainDao.getVisit(connection, ip);
-        let resIp = "";
+        let resIp = [];
+        console.log(ip);
         if (row.length === 0) {
-          resIp = ip;
+          resIp.push(ip);
           await mainDao.insertVisit(connection, ip)
         }
+
         const [today] = await mainDao.today(connection);
         const [total] = await mainDao.total(connection);
 
         return res.send({
-          result: {today:today[0].todayCount,total:total[0].totalCount,"ip" : resIp},
+          result: {today:today[0].todayCount,total:total[0].totalCount,ip: resIp[0]},
           isSuccess: true,
           code: 200,
           message: "요청 성공",
