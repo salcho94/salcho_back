@@ -28,7 +28,7 @@ exports.visit = async function(req,res){
         const [total] = await mainDao.total(connection);
 
         return res.send({
-          result: {today:today[0].todayCount,total:total[0].totalCount,ip :resIp},
+          result: {today:today[0].todayCount,total:total[0].totalCount,"ip" : resIp},
           isSuccess: true,
           code: 200,
           message: "요청 성공",
