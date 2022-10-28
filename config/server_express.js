@@ -17,7 +17,7 @@ module.exports = function () {
     key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
     cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
   };
-  const server = require('HTTPS').createServer(option,app);
+  const server = HTTPS.createServer(option,app);
   const io = require('socket.io')(server);
 
 
