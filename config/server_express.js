@@ -3,7 +3,6 @@ const compression = require("compression");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-const fs = require("fs");
 const path = require("path");
 const HTTPS = require("https");
 
@@ -11,14 +10,18 @@ const HTTPS = require("https");
 
 module.exports = function () {
   const app = express()
+  const fs = require('fs')
   const option = {
     ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
     key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
     cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
+    requestCert: false,
+    rejectUnauthorized: false
   };
   const server = HTTPS.createServer(option,app);
-  const io = require('socket.io')(server);
+  server.listen(3000, ('0.0.0.0') );
 
+  const io = require('socket.io')(server);
 
   io.on('connection', socket => {
     console.log('실행중');
@@ -71,6 +74,6 @@ module.exports = function () {
     })
   })
 
-  server.listen(3000, ('0.0.0.0') );
+
 
 };
