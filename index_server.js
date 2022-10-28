@@ -18,7 +18,7 @@ const option = {
     rejectUnauthorized: false
 };
 const server = HTTPS.createServer(option,app);
-server.listen(3000, ('0.0.0.0') );
+server.listen(3005, ('0.0.0.0') );
 
 const io = require('socket.io')(server);
 
