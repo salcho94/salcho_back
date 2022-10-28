@@ -11,7 +11,6 @@ const HTTPS = require("https");
 
 module.exports = function () {
   const app = express()
-  const fs = require('fs')
   const option = {
     ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
     key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
