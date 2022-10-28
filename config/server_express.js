@@ -3,13 +3,21 @@ const compression = require("compression");
 const methodOverride = require("method-override");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
+const fs = require("fs");
+const path = require("path");
+const HTTPS = require("https");
 
 
 
 module.exports = function () {
   const app = express()
   const fs = require('fs')
-  const server = require('http').createServer(app);
+  const option = {
+    ca: fs.readFileSync('/etc/letsencrypt/live/salcho.cf/fullchain.pem'),
+    key: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/privkey.pem'), 'utf8').toString(),
+    cert: fs.readFileSync(path.resolve(process.cwd(), '/etc/letsencrypt/live/salcho.cf/cert.pem'), 'utf8').toString(),
+  };
+  const server = require('HTTPS').createServer(option,app);
   const io = require('socket.io')(server);
 
 
@@ -23,7 +31,6 @@ module.exports = function () {
 
     socket.on('update',(data) =>{
       data.name = socket.name;
-      console.log(data.name);
       io.emit('update',data);
     });
 
