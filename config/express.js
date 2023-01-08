@@ -22,6 +22,7 @@ module.exports = function () {
   require("../src/routes/boardRoute")(app);
   require("../src/routes/memberRoute")(app);
   require("../src/routes/mainRoute")(app);
+  require("../src/routes/mailRoute")(app);
 
   return app;
 };
