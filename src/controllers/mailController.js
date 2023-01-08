@@ -24,8 +24,8 @@ exports.send = async function(req,res){
   const {title , message} = req.query;
   const ip = requestIp.getClientIp(req);
   console.log(ip);
-  // let resIp = await doRequest(ip);
-  let resIp = await doRequest('122.43.55.208');
+  let resIp = await doRequest(ip);
+  //let resIp = await doRequest('122.43.55.208');
   let area = [];
   let areaStr = JSON.parse(resIp.body);
   area.push(areaStr.country);
